@@ -299,6 +299,7 @@ if (biicore.bgMusic) {
           .classList.remove("show-sec");
       }, 7000);
       clearInterval(myInterval);
+      audioPlayer.play();
     }
   }, 200);
 
@@ -378,8 +379,6 @@ if (biicore.bgMusic) {
 		</div>
 	</div>
 	`);
-
-  audioPlayer.play();
 }
 
 if (!biicore.isPremium && !biicore.templatePremium) {

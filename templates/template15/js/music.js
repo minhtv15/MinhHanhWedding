@@ -296,6 +296,7 @@ if (biicore.bgMusic) {
           .classList.remove("show-sec");
       }, 5000);
       clearInterval(myInterval);
+      audioPlayer.play();
     }
   }, 200);
 
