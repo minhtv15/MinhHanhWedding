@@ -385,8 +385,6 @@ if (biicore.bgMusic) {
 		</div>
 	</div>
 	`);
-
-  audioPlayer.play();
 }
 
 if (!biicore.isPremium && !biicore.templatePremium) {
