@@ -294,12 +294,21 @@ if (biicore.bgMusic) {
           .classList.add("show-sec");
       }, 2000);
       setTimeout(function () {
+        audioPlayer.play();
         document
           .getElementsByClassName("bii-player")[0]
           .classList.remove("show-sec");
-      }, 7000);
+      }, 5000);
+
+      setTimeout(function () {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          document.getElementById("playerVolumeOff").style.display = "none";
+          document.getElementById("playerVolumeOn").style.display = "block";
+        }
+      }, 12000);
+
       clearInterval(myInterval);
-      audioPlayer.play();
     }
   }, 200);
 
