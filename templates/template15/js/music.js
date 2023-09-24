@@ -274,7 +274,7 @@ if (biicore.bgMusic) {
   audioPlayer.autoplay = "true";
   audioPlayer.loop = "true";
   setTimeout(function () {
-    if (audioPlayer.canPlayType("audio/mp3")) {
+    if (audioPlayer.canPlayType("audio/mpeg")) {
       audioPlayer.setAttribute("src", biicore.bgMusic);
       document.getElementsByClassName("bii-player")[0].style.display = "block";
     }
@@ -375,6 +375,8 @@ if (biicore.bgMusic) {
 		</div>
 	</div>
 	`);
+
+  audioPlayer.play();
 }
 
 if (!biicore.isPremium && !biicore.templatePremium) {
