@@ -815,23 +815,23 @@ img {
 }
 
 .preloader .middle i:first-child {
-  -webkit-animation: preloaderAnimation 0.6s infinite alternate;
-  animation: preloaderAnimation 0.6s infinite alternate;
+  -webkit-animation: preloaderAnimation 0.6s 3 alternate;
+  animation: preloaderAnimation 0.6s 3 alternate;
 }
 
 .preloader .middle i:nth-child(2) {
-  -webkit-animation: preloaderAnimation 0.6s 0.3s infinite alternate;
-  animation: preloaderAnimation 0.6s 0.3s infinite alternate;
+  -webkit-animation: preloaderAnimation 0.6s 0.3s 3 alternate;
+  animation: preloaderAnimation 0.6s 0.3s 3 alternate;
 }
 
 .preloader .middle i:nth-child(3) {
-  -webkit-animation: preloaderAnimation 0.6s 0.6s infinite alternate;
-  animation: preloaderAnimation 0.6s 0.6s infinite alternate;
+  -webkit-animation: preloaderAnimation 0.6s 0.6s 3 alternate;
+  animation: preloaderAnimation 0.6s 0.6s 3 alternate;
 }
 
 .preloader .middle i:last-child {
-  -webkit-animation: preloaderAnimation 0.6s 0.9s infinite alternate;
-  animation: preloaderAnimation 0.6s 0.9s infinite alternate;
+  -webkit-animation: preloaderAnimation 0.6s 0.9s 3 alternate;
+  animation: preloaderAnimation 0.6s 0.9s 3 alternate;
 }
 
 @-webkit-keyframes preloaderAnimation {
