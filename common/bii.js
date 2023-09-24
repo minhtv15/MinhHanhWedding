@@ -362,21 +362,24 @@ if (biicore.bgMusic) {
 	<div class="bii-player">
 		<div onclick="playPause();" class="bii-player-secondary"><div class="bii-player-secondary-content">Click vào đây nếu bạn muốn tắt nhạc!</div></div>
 		<div onclick="playPause();" class="playerIcon">
+      <span style="display:block;" id="playerVolumeOn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+          <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+          <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+          <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+        </svg>
+      </span>
 			<span style="display:none;" id="playerVolumeOff" >
 				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
 				  <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
 				</svg>
 			</span>
-			<span style="display:block;" id="playerVolumeOn">
-				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
-				  <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-				  <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-				  <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
-				</svg>
-			</span>
+
 		</div>
 	</div>
 	`);
+
+  audioPlayer.play();
 }
 
 if (!biicore.isPremium && !biicore.templatePremium) {
@@ -444,18 +447,6 @@ if (!biicore.isPremium && !biicore.templatePremium) {
 	  .bii-footer .show-mobile{display: inline-block;}
 	}
 	</style>
-	<div class="bii-logo"><div class="bii-logo-secondary"><div class="bii-logo-secondary-content">Nền tảng tạo Website đám cưới miễn phí!</div></div><a href="${biicore.coreSite}/wedding" target="_blank"><img src="${biiLogo}" /></a></div>
-	<div class="bii-footer" style="z-index:9999;background-color: #000;border-top: 1px solid #df4759;color: #fff;text-align: center;letter-spacing: 1px;bottom: 0;width: 100%;font-size: 13px;">
-		<div class="container">
-			<a style="color:#fff;padding: 7px 0 9px;display: block;" href="https://biihappy.com/wedding" target="_blank">
-				<span><img width="16" src="${biiLogo}" style="border: 1px solid #fff;border-radius: 50%;width:16px!important;" /> IWedding</span> | <span class="show-desktop">Nền tảng tạo website đám cưới miễn phí từ Biihappy</span><span class="show-mobile">Tạo website đám cưới miễn phí</span>
-				<span style="line-height: 15px;vertical-align: middle;">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-					</svg>
-				</span>
-			</a>
-		</div>
-	</div>
+
 	`);
 }
