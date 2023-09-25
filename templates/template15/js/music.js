@@ -213,28 +213,31 @@ window.onload = (event) => {
         maxSpeed: 3,
         minSpeed: 1,
       });
-    } else if (biicore.effect.type == "snow") {
-      let flakeCount = 250;
-      if (
-        typeof biicore.template_id !== "undefined" &&
-        special_custom.includes(biicore.template_id)
-      ) {
-        flakeCount = 50;
-        if (window.innerWidth <= 1200) {
-          flakeCount = 30;
-        }
-        if (window.innerWidth <= 650) {
-          flakeCount = 25;
-        }
-      }
-      snowFall.snow(document.getElementsByTagName("body")[0], {
-        round: true,
-        shadow: true,
-        flakeCount: flakeCount,
-        minSize: 1,
-        maxSize: 8,
-      });
-    } else if (biicore.effect.type == "custom") {
+    }
+
+    //  else if (biicore.effect.type == "snow") {
+    //   let flakeCount = 250;
+    //   if (
+    //     typeof biicore.template_id !== "undefined" &&
+    //     special_custom.includes(biicore.template_id)
+    //   ) {
+    //     flakeCount = 50;
+    //     if (window.innerWidth <= 1200) {
+    //       flakeCount = 30;
+    //     }
+    //     if (window.innerWidth <= 650) {
+    //       flakeCount = 25;
+    //     }
+    //   }
+    //   snowFall.snow(document.getElementsByTagName("body")[0], {
+    //     round: true,
+    //     shadow: true,
+    //     flakeCount: flakeCount,
+    //     minSize: 1,
+    //     maxSize: 8,
+    //   });
+    // }
+    else if (biicore.effect.type == "custom") {
       let effectSetting = biicore.effect.setting;
       let minSpeed = parseInt(effectSetting.speed) - 3;
       if (minSpeed <= 0) minSpeed = 1;
@@ -247,6 +250,26 @@ window.onload = (event) => {
         minSpeed: minSpeed,
       });
     }
+  }, 300);
+
+  setTimeout(function () {
+    let flakeCount_2 = 250;
+
+    flakeCount_2 = 50;
+    if (window.innerWidth <= 1200) {
+      flakeCount_2 = 30;
+    }
+    if (window.innerWidth <= 650) {
+      flakeCount_2 = 25;
+    }
+
+    snowFall.snow(document.getElementsByTagName("body")[0], {
+      round: true,
+      shadow: true,
+      flakeCount: flakeCount_2,
+      minSize: 1,
+      maxSize: 8,
+    });
   }, 300);
 };
 
