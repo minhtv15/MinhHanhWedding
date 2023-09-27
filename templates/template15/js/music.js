@@ -429,8 +429,9 @@ if (biicore.bgMusic) {
       audioPlayer.setAttribute("src", biicore.bgMusic);
       document.getElementsByClassName("bii-player")[0].style.display = "block";
     }
+    audioPlayer.preload = "auto";
     audioPlayer.volume = 0.5;
-    audioPlayer.setAttribute("controls", "controls");
+    // audioPlayer.setAttribute("controls", "controls");
     document.body.appendChild(audioPlayer);
     audioPlayer.loop = "true";
   }, 1000);
