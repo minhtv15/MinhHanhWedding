@@ -457,7 +457,7 @@ if (biicore.bgMusic) {
     audioPlayer.volume = 0.5;
     audioPlayer.setAttribute("controls", "controls");
     document.body.appendChild(audioPlayer);
-  }, 1000);
+  }, 5000);
 
   var myInterval = setInterval(function () {
     if (document.querySelector(".bii-player")) {
