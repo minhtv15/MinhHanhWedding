@@ -444,23 +444,22 @@ if (biicore.bgMusic) {
           .classList.add("show-sec");
       }, 2000);
       setTimeout(function () {
-        // if (audioPlayer.paused) {
-        //   audioPlayer.play();
-        //   document.getElementById("playerVolumeOff").style.display = "none";
-        //   document.getElementById("playerVolumeOn").style.display = "block";
-        // }
+        console.log(audioPlayer.paused);
+        playPause();
         document
           .getElementsByClassName("bii-player")[0]
           .classList.remove("show-sec");
       }, 5000);
 
-      // setTimeout(function () {
-      //   if (audioPlayer.paused) {
-      //     audioPlayer.play();
-      //     document.getElementById("playerVolumeOff").style.display = "none";
-      //     document.getElementById("playerVolumeOn").style.display = "block";
-      //   }
-      // }, 12000);
+      setTimeout(function () {
+        if (audioPlayer.paused) {
+          console.log("Play ");
+          console.log(audioPlayer.paused);
+          audioPlayer.play();
+          document.getElementById("playerVolumeOff").style.display = "none";
+          document.getElementById("playerVolumeOn").style.display = "block";
+        }
+      }, 10000);
       clearInterval(myInterval);
     }
   }, 200);
@@ -471,10 +470,14 @@ if (biicore.bgMusic) {
       .classList.remove("show-sec");
 
     if (audioPlayer.paused) {
+      console.log("Play ");
+      console.log(audioPlayer.paused);
       audioPlayer.play();
       document.getElementById("playerVolumeOff").style.display = "none";
       document.getElementById("playerVolumeOn").style.display = "block";
     } else {
+      console.log("Pause ");
+      console.log(audioPlayer.paused);
       audioPlayer.pause();
       document.getElementById("playerVolumeOff").style.display = "block";
       document.getElementById("playerVolumeOn").style.display = "none";
@@ -541,74 +544,5 @@ if (biicore.bgMusic) {
 
 		</div>
 	</div>
-	`);
-}
-
-if (!biicore.isPremium && !biicore.templatePremium) {
-  setTimeout(function () {
-    document.getElementsByClassName("bii-logo")[0].classList.add("show-sec");
-  }, 8000);
-  setTimeout(function () {
-    document.getElementsByClassName("bii-logo")[0].classList.remove("show-sec");
-  }, 11000);
-  setTimeout(function () {
-    document.getElementsByClassName("bii-logo")[0].classList.add("show-sec");
-  }, 25000);
-  setTimeout(function () {
-    document.getElementsByClassName("bii-logo")[0].classList.remove("show-sec");
-  }, 28000);
-  var biiLogo = biicore.webroot + "/common/imgs/bii.png";
-  var currentYear = new Date().getFullYear();
-  document.write(`
-	<style type="text/css">
-	@-webkit-keyframes biilogo-pulse {
-	  from {
-	    -webkit-transform: scale3d(1, 1, 1);
-	    transform: scale3d(1, 1, 1);
-	  }
-	  50% {
-	    -webkit-transform: scale3d(0.95, 0.95, 0.95);
-	    transform: scale3d(0.95, 0.95, 0.95);
-	  }
-	  to {
-	    -webkit-transform: scale3d(1, 1, 1);
-	    transform: scale3d(1, 1, 1);
-	  }
-	}
-	
-	@keyframes biilogo-pulse {
-	  from {
-	    -webkit-transform: scale3d(1, 1, 1);
-	    transform: scale3d(1, 1, 1);
-	  }
-	  50% {
-	    -webkit-transform: scale3d(0.95, 0.95, 0.95);
-	    transform: scale3d(0.95, 0.95, 0.95);
-	  }
-	  to {
-	    -webkit-transform: scale3d(1, 1, 1);
-	    transform: scale3d(1, 1, 1);
-	  }
-	}
-	.bii-logo{position: fixed;bottom: 70px;right: 50px;width: 40px;height: 40px;z-index:99998;}
-	.bii-logo a{display: block;}
-	.bii-logo:before{content: "";position: absolute;-webkit-border-radius: 50%;-moz-border-radius: 50%;-o-border-radius: 50%;-ms-border-radius: 50%;border-radius: 50%;z-index: -1;background-color: rgba(242, 59, 67, 0.3);width: 120%;height: 120%;left: -10%;top: -10%;-webkit-animation: biilogo-pulse 1s infinite;animation: biilogo-pulse 1s infinite;z-index: 1;}
-	.bii-logo img{width: 100%;z-index: 99999;position: absolute;cursor:pointer;}
-	.bii-logo:hover .bii-logo-secondary{visibility: visible;}
-	.bii-logo:hover .bii-logo-secondary-content{ transform: translate3d(0, 0, 0);}
-	.bii-logo.show-sec .bii-logo-secondary{visibility: visible;}
-	.bii-logo.show-sec .bii-logo-secondary-content{ transform: translate3d(0, 0, 0);}
-	
-	.bii-logo-secondary{position: absolute;width: 320px;right: 25px;height: 40px;overflow: hidden;visibility: hidden;}
-	.bii-logo-secondary-content{display: flex;align-items: center;position: absolute;width: 320px;right: -25px;background: #fff;height: 40px;padding: 8px 40px 8px 11px;border: 1px solid #df4759;border-radius: 30px;z-index: 9999;font-size:14px;transform: translate3d(100%, 0, 0);transition: transform 175ms ease;font-family: arial;font-weight: 200;color: #000;}
-	.bii-footer .show-desktop{display: inline-block;}
-	.bii-footer .show-mobile{display: none;}
-	@media (max-width: 799px) {
-	  .bii-logo{bottom: 30px;right: 20px;}
-	  .bii-footer .show-desktop{display: none;}
-	  .bii-footer .show-mobile{display: inline-block;}
-	}
-	</style>
-
 	`);
 }
