@@ -433,13 +433,7 @@ if (biicore.bgMusic) {
     audioPlayer.setAttribute("controls", "controls");
     document.body.appendChild(audioPlayer);
     audioPlayer.loop = "true";
-  }, 500);
-
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-    document.getElementById("playerVolumeOff").style.display = "none";
-    document.getElementById("playerVolumeOn").style.display = "block";
-  }
+  }, 1000);
 
   var myInterval = setInterval(function () {
     if (document.querySelector(".bii-player")) {
@@ -449,23 +443,23 @@ if (biicore.bgMusic) {
           .classList.add("show-sec");
       }, 2000);
       setTimeout(function () {
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-          document.getElementById("playerVolumeOff").style.display = "none";
-          document.getElementById("playerVolumeOn").style.display = "block";
-        }
+        // if (audioPlayer.paused) {
+        //   audioPlayer.play();
+        //   document.getElementById("playerVolumeOff").style.display = "none";
+        //   document.getElementById("playerVolumeOn").style.display = "block";
+        // }
         document
           .getElementsByClassName("bii-player")[0]
           .classList.remove("show-sec");
       }, 5000);
 
-      setTimeout(function () {
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-          document.getElementById("playerVolumeOff").style.display = "none";
-          document.getElementById("playerVolumeOn").style.display = "block";
-        }
-      }, 12000);
+      // setTimeout(function () {
+      //   if (audioPlayer.paused) {
+      //     audioPlayer.play();
+      //     document.getElementById("playerVolumeOff").style.display = "none";
+      //     document.getElementById("playerVolumeOn").style.display = "block";
+      //   }
+      // }, 12000);
       clearInterval(myInterval);
     }
   }, 200);
