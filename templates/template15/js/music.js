@@ -432,9 +432,14 @@ if (biicore.bgMusic) {
     audioPlayer.volume = 0.5;
     audioPlayer.setAttribute("controls", "controls");
     document.body.appendChild(audioPlayer);
-    audioPlayer.autoplay = "true";
     audioPlayer.loop = "true";
   }, 500);
+
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    document.getElementById("playerVolumeOff").style.display = "none";
+    document.getElementById("playerVolumeOn").style.display = "block";
+  }
 
   var myInterval = setInterval(function () {
     if (document.querySelector(".bii-player")) {
@@ -444,7 +449,11 @@ if (biicore.bgMusic) {
           .classList.add("show-sec");
       }, 2000);
       setTimeout(function () {
-        audioPlayer.play();
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          document.getElementById("playerVolumeOff").style.display = "none";
+          document.getElementById("playerVolumeOn").style.display = "block";
+        }
         document
           .getElementsByClassName("bii-player")[0]
           .classList.remove("show-sec");
