@@ -386,31 +386,7 @@ window.onload = (event) => {
         minSize: 1,
         maxSize: 8,
       });
-    }
-
-    //  else if (biicore.effect.type == "snow") {
-    //   let flakeCount = 250;
-    //   if (
-    //     typeof biicore.template_id !== "undefined" &&
-    //     special_custom.includes(biicore.template_id)
-    //   ) {
-    //     flakeCount = 50;
-    //     if (window.innerWidth <= 1200) {
-    //       flakeCount = 30;
-    //     }
-    //     if (window.innerWidth <= 650) {
-    //       flakeCount = 25;
-    //     }
-    //   }
-    //   snowFall.snow(document.getElementsByTagName("body")[0], {
-    //     round: true,
-    //     shadow: true,
-    //     flakeCount: flakeCount,
-    //     minSize: 1,
-    //     maxSize: 8,
-    //   });
-    // }
-    else if (biicore.effect.type == "custom") {
+    } else if (biicore.effect.type == "custom") {
       let effectSetting = biicore.effect.setting;
       let minSpeed = parseInt(effectSetting.speed) - 3;
       if (minSpeed <= 0) minSpeed = 1;
@@ -447,8 +423,7 @@ if (
 if (biicore.bgMusic) {
   var audioPlayer = document.createElement("AUDIO");
   audioPlayer.style.display = "none";
-  audioPlayer.autoplay = "true";
-  audioPlayer.loop = "true";
+
   setTimeout(function () {
     if (audioPlayer.canPlayType("audio/mpeg")) {
       audioPlayer.setAttribute("src", biicore.bgMusic);
@@ -457,7 +432,9 @@ if (biicore.bgMusic) {
     audioPlayer.volume = 0.5;
     audioPlayer.setAttribute("controls", "controls");
     document.body.appendChild(audioPlayer);
-  }, 5000);
+    audioPlayer.autoplay = "true";
+    audioPlayer.loop = "true";
+  }, 500);
 
   var myInterval = setInterval(function () {
     if (document.querySelector(".bii-player")) {
